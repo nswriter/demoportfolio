@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Writing</title>
+    <link rel="icon" href="img/favicon-ns.png">
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+
+
+
+
+
+
+
+<body>
+
+ <div class="wrapperMainContent">
+<!-- ___________________________________________NAV________________________________________________________ -->
+        <header>
+            
+            <nav>
+                <!-- Nav Container -->
+                  <div class="topNav" id="myNav">
+                <!-- Logo -->
+                      <a class="logoA" href=index.html><img class="logo" src="./img/favicon-ns.png" alt="logo"></a>
+                      <ul>
+                         
+                <!-- About -->
+                          <li><a href="about.html">About</a></li>
+                <!-- Portfolio -->
+                          <li><a href="portfolio.html">Portfolio</a></li>
+                <!-- Writing Samples -->
+                          <li class="dropdown">
+                              <a class="currentPage" href="javascript:void(0)" class="dropbtn">Writing Samples</a>
+                              <div class="dropdown-content">
+                                <a href="creativesamples.html">Creative</a>
+                                <a href="academicsamples.html">Academic</a>
+                              </div>
+                            </li>
+                <!-- Resume -->
+                            <li><a href="resume.html">Resume</a></li>
+                <!-- Temp Links -->
+                          <!-- <li class="dropdown">
+                              <a href="javascript:void(0)" class="dropbtn temp">Temp Links</a>
+                              <div class="dropdown-content">
+                                <a href="frame.html">Frame</a>
+                                <a href="frameMainContent.html">MC Frame</a>
+                                <a class="temp" href="../exercises/index.html">Exercises</a>
+                              </div>
+                          </li> -->
+                      </ul>
+                      <div href="javascript:void(0);" class="hamburgerBtn" onclick="myFunction()">
+                          <img src="./img/navbar.png">
+                      </div>
+                  </div>
+                  
+              </nav>
+        </header>
+<!-- ___________________________________________BANNER________________________________________________________ --> 
+<div class="banner">
+    <!-- <p>Banner Image</p> -->
+    <img src="./img/img_placeholder_wide.png">
+
+</div>
+
+<!-- ___________________________________________MAIN________________________________________________________ -->   
+       
+<main>
+  <h1 class="pageTitle">Academic Writing Samples</h1>
+  <div class="cardStore">
+    <div class="card">
+      <!-- <img src="../images/bookimg4.png" alt="image of books"> -->
+      <h2>Essay 1 Title</h2>
+      <p>Written 2024</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt, itaque qui. Molestiae, doloremque neque. Corporis earum nesciunt in sint! Suscipit vero repudiandae voluptate deleniti iure beatae nesciunt minus eveniet incidunt?</p>
+      <a class="readNow" href="#">Read</a>
+    </div>
+    <div class="card">
+      <h2>Essay 2 Title</h2>
+      <p>Written 2024</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt, itaque qui. Molestiae, doloremque neque. Corporis earum nesciunt in sint! Suscipit vero repudiandae voluptate deleniti iure beatae nesciunt minus eveniet incidunt?</p>
+      <a class="readNow" href="#">Read</a>
+    </div>
+  </div>
+</main>
+
+  
+<!-- ___________________________________________FOOTER________________________________________________________ -->
+
+        <footer>
+            <p>Footer</p>
+        </footer>
+
+    </div>
+
+
+
+    <script>
+               
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+          function myFunction() {
+            var x = document.getElementById("myNav");
+            if (x.className === "topNav") {
+              x.className += " responsive";
+            } else {
+              x.className = "topNav";
+            }
+          }
+              </script>
+</body>
+</html>

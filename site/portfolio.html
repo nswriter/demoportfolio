@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | NS</title>
+    <link rel="icon" href="img/favicon-ns.png">
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+
+
+
+
+
+
+
+<body>
+
+ <div class="wrapperMainContent">
+<!-- ___________________________________________NAV________________________________________________________ -->
+        <header>
+            
+            <nav>
+                <!-- Nav Container -->
+                  <div class="topNav" id="myNav">
+                <!-- Logo -->
+                      <a class="logoA" href=index.html><img class="logo" src="./img/favicon-ns.png" alt="logo"></a>
+                      <ul>
+                         
+                <!-- About -->
+                          <li><a href="about.html">About</a></li>
+                <!-- Portfolio -->
+                          <li><a class="currentPage" href="portfolio.html">Portfolio</a></li>
+                <!-- Writing Samples -->
+                          <!-- <li class="dropdown">
+                              <a class="currentPage" href="javascript:void(0)" class="dropbtn">Writing Samples</a>
+                              <div class="dropdown-content">
+                                <a href="creativesamples.html">Creative</a>
+                                <a href="academicsamples.html">Academic</a>
+                              </div>
+                            </li> -->
+                <!-- Resume -->
+                            <li><a href="resume.html">Resume</a></li>
+                <!-- Temp Links -->
+                          <!-- <li class="dropdown">
+                              <a href="javascript:void(0)" class="dropbtn temp">Temp Links</a>
+                              <div class="dropdown-content">
+                                <a href="frame.html">Frame</a>
+                                <a href="frameMainContent.html">MC Frame</a>
+                                <a class="temp" href="../exercises/index.html">Exercises</a>
+                              </div>
+                          </li> -->
+                      </ul>
+                      <div href="javascript:void(0);" class="hamburgerBtn" onclick="myFunction()">
+                        <img src="./site/img/navbar.png" alt="Navigation Button">
+                      </div>
+                  </div>
+                  
+              </nav>
+        </header>
+<!-- ___________________________________________BANNER________________________________________________________ --> 
+<!-- <div class="banner">
+
+    <img src="./img/img_placeholder_wide.png">
+
+</div> -->
+
+<!-- ___________________________________________MAIN________________________________________________________ -->   
+       
+<main>
+  <h1 class="pageTitle">My Portfolio</h1>
+        <article class="portfolio">
+        <h2 class="sectionTitle">Creative Writing Samples</h2>
+          <div class="cardStore">
+           
+            <div class="gridCard">
+              <!-- <img src="../images/bookimg4.png" alt="image of books"> -->
+              <h2>Space Haulers</h2>
+              <p>Written 2024 | Words: 4845</p>
+              <p>A sci-fi adventure with a hint of horror, this story sees two long-haul spacers navigating a perilous journey.</p>
+              <a class="readNow" href="spacehaulers.html">Read</a>
+            </div>
+            <div class="gridCard">
+              <h2>A Sight for Weary Eyes</h2>
+              <p>Written 2024 | Words: 2154</p>
+              <p>This quick fantasy story sees a young man trying to find the wonder of nature in a changing world.</p>
+              <a class="readNow" href="sightforeyes.html">Read</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio">
+          <h2 class="sectionTitle">Academic Writing Samples</h2>
+          <div class="cardStore">
+           
+            <div class="gridCard">
+              <!-- <img src="../images/bookimg4.png" alt="image of books"> -->
+              <h2>The Natural Guide: The Joy of Nature and the Woes Without It
+              </h2>
+              <p>Written 2023 | Words: 1163</p>
+              <p>Assessing the role of nature in Coleridge's <cite>This Lime-Tree Bower My Prison</cite> and Mary Shelley's <cite>Frankenstein</cite>.</p>
+              <a class="readNow" href="essay1.html">Read</a>
+            </div>
+            <div class="gridCard">
+              <h2>The Final Frontier Gets a Name: The Landscape and Geography of Colonialism
+              </h2>
+              <p>Written 2023 | Words: 1581</p>
+              <p>Looking at the way landscapes are portrayed in <cite>Heart of Darkness</cite>, and <cite>The Martian</cite> through a postcolonial lens.</p>
+              <a class="readNow" href="essay2.html">Read</a>
+            </div>
+            <div class="gridCardFull">
+              <h2>Erasure of Language and its Effects on Culture in <cite>Translations</cite>
+
+              </h2>
+              <p>Written 2023 | Words: 1485</p>
+              <p>Looking at the way in which the English language is portrayed as a colonial force in Brian Friel's <cite>Translations</cite>.</p>
+              <a class="readNow" href="essay3.html">Read</a>
+            </div>
+          </div>
+        </article>
+        <!-- <article class="portfolio">
+          <h2 class="sectionTitle">Bonus Section: Art</h2>
+          <div class="cardStore">
+           
+            <div class="gridCardArt">
+             
+              <h2>Floating Island
+              </h2>
+              <img src="../images/floatingIsland_colorized.png" alt="A Floating Island against a blue sky with some clouds.">
+              <a class="readNow" href="essay1.html">Read About</a>
+            </div>
+            
+          </div>
+        </article> -->
+</main>
+
+  
+<!-- ___________________________________________FOOTER________________________________________________________ -->
+
+        <footer>
+          <address>
+            <p>Copyright 2024 Nicholas Silva
+            <br>
+            Contact Me At: nasilva@umass.edu</p>
+          </address>
+        </footer>
+
+    </div>
+
+
+
+    <script>
+               
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+          function myFunction() {
+            var x = document.getElementById("myNav");
+            if (x.className === "topNav") {
+              x.className += " responsive";
+            } else {
+              x.className = "topNav";
+            }
+          }
+              </script>
+</body>
+</html>

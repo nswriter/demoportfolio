@@ -1,0 +1,949 @@
+:root{
+    --white: white;
+    --callout: rgb(10, 64, 83);
+    --nav:#6f6f9f;
+    --navDark:#393952;
+    --callout: rgb(10, 64, 83);
+    --defBG: rgb(239, 239, 239);
+    --bgCallout: rgb(149, 154, 163);
+    --bgCallout2:rgb(73, 75, 78);
+    --bgCallout3: rgb(198, 203, 211);
+
+    
+    
+
+
+    
+   
+
+/* OLD COLORS */
+     /* --nav:#172F33; 
+    --navDark:#2C4347;
+    --callout: #2C4347;
+    --defBG: #5A6E72;
+    --bgCallout: #84999C; 
+    --bgCallout2:#87BDC7 ;
+    --bgCallout3: rgb(198, 203, 211); */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+Wrappers and Layout Responsiveness
+___________________________________________________________________________________________
+*/
+/* Default Wrapper */
+.wrapper{ 
+    display:grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto /*1fr*/ 1fr auto;
+    grid-template-areas: 
+        "header header header"
+        /* "splash splash splash" */
+        "main main aside"
+        "footer footer footer";
+    height: 100vh;
+
+}
+
+/* __Refactor Grid to Single Column__ */
+@media screen and (max-width:600px) {
+    .wrapper{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr 1fr auto;
+        grid-template-areas: 
+            "header"
+            "main"
+            "aside"
+            "footer"
+        ;
+        height:100vh;
+    }
+}
+.wrapperSplash{ 
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto /*1fr*/ 1fr auto;
+    grid-template-areas: 
+        "header"
+        /* "splash splash splash" */
+        "main"
+        "footer";
+    height: 100vh;
+
+}
+
+/* __Refactor Grid to Single Column__ */
+@media screen and (max-width:600px) {
+    .wrapperSplash{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr 1fr auto;
+        grid-template-areas: 
+            "header"
+            "main"
+            "aside"
+            "footer"
+        ;
+        height:100vh;
+    }
+}
+/* Main content wrapper (no aside) */
+.wrapperMainContent{
+    display:grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto 1fr 1fr auto;
+    grid-template-areas: 
+        "header header header"
+        "banner banner banner"
+        "main main main"
+        "footer footer footer";
+    height: 100vh;
+
+}
+
+/* __Refactor Grid to Single Column__ */
+@media screen and (max-width:600px) {
+    .wrapperMainContent{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 
+            "header"
+            "banner"
+            "main"
+            "footer"
+        ;
+        height:100vh;
+    }
+}
+/* Main content wrapper (aside) */
+.wrapperMainContentExpanded{
+    display:grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto 1fr 1fr /*1fr*/ auto;
+    grid-template-areas: 
+        "header header header"
+        "banner banner banner"
+        "main main aside"
+        /* "aside aside aside" */
+        "footer footer footer";
+    height: 100vh;
+
+}
+
+/* __Refactor Grid to Single Column__ */
+@media screen and (max-width:950px) {
+    .wrapperMainContentExpanded{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr 1fr auto;
+        grid-template-areas: 
+            "header"
+            "banner"
+            "main"
+            "aside"
+            "footer"
+        ;
+        height:100vh;
+    }
+}
+/* Main content wrapper (aside at bottom) */
+.wrapperMainContentExpanded{
+    display:grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto 1fr 1fr 1fr auto;
+    grid-template-areas: 
+        "header header header"
+        "banner banner banner"
+        "main main aside"
+        "aside aside aside"
+        "footer footer footer";
+    height: 100vh;
+
+}
+
+/* __Refactor Grid to Single Column__ */
+@media screen and (max-width:950px) {
+    .wrapperMainContentExpanded{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr 1fr auto;
+        grid-template-areas: 
+            "header"
+            "banner"
+            "main"
+            "aside"
+            "footer"
+        ;
+        height:100vh;
+    }
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    padding: 0;
+    background-color: var(--defBG);
+}
+
+
+
+
+/*
+navigation
+___________________________________________________________________________________________
+*/
+/*rgb(111, 111, 159);*/
+header{
+    grid-area: header;
+    background-color: var(--nav);
+    /* grid-area: 1 / 1 / 2 / 4; */
+}
+nav{
+    background-color: var(--nav);
+    padding:.5rem;
+}
+nav .logo{
+    image-rendering: pixelated;
+    height:3rem;
+    width:3rem;
+    /*border-radius: 15px;*/
+    filter:grayscale();
+}
+nav ul{
+    display:block;
+    float:right;
+    margin-right:1rem;
+}
+nav ul li{
+    display:inline-block;
+    line-height:1rem;
+    margin:0 5px;
+}
+ul a{
+    color:white;
+    text-decoration: none;
+    /* background-color: black; */
+    background-color: var(--navDark);
+    padding:1rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    border-radius: 1rem;
+}
+
+.currentPage{
+    background-color: var(--bgCallout2);
+    /* border-radius: .5rem; */
+}
+ul a:hover{
+    /* background-color: rgb(64, 64, 64); */
+    background-color: var(--bgCallout);
+    color:var(--white);
+    border-radius: .5rem;
+    transition: .1s;
+}
+
+.temp{
+    background-color: maroon;
+    font-weight: bold;
+}
+.temp:hover{
+    background-color: red;
+}
+.currentTemp{
+    background-color: red;
+}
+.hamburgerBtn{
+    display:none;
+    
+}
+
+
+
+
+
+/*
+splash
+___________________________________________________________________________________________
+*/
+.splash{
+    /* grid-area: splash; */
+    /* background-image: url(../images/bookimg2.png); */
+    /* background-image: url(./img/temp_library_splash_color2.png); */
+    /* background-image: url(./img/bookIsland_sketch2.jpg); */
+    /* background-image: url(./img/floatingIsland.png); */
+    background-image: url(../site/img/floatingIsland_colorized.png);
+    /* background-image: url(../images/bookshelf_moody.png); */
+    /* background-image: url(./img/bookshelf2.png); */
+    image-rendering: optimizeSpeed;
+    background-size: cover;
+    background-position: center;
+    width:100%;
+    height:100vh;
+   
+}
+
+.splashContent{
+    width:fit-content;
+    height: fit-content;
+    /* top:25%;
+    left:25%;
+    position: relative; */
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    top:40%;
+    /* background-color: rgba(48, 51, 53, 0.9); */
+    background-color: rgba(23, 47, 51, 0.9);
+    color:white;
+    border-radius: 3rem;
+    /* border:solid .25rem var(--bgCallout2); */
+    /* color:white; */
+    padding:1rem;
+}
+.splashPacity{
+    width:100%;
+    height:100vh;
+    position:absolute;
+    top:0%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+/* Set splash text to center of screen on smaller screens */
+@media screen and
+ (max-width:950px){
+    .splashContent{
+        position:relative;
+        margin-left:auto;
+        margin-right:auto;
+        top:30%;
+        left:0;
+        right:0;
+        background-color: rgba(23, 47, 51, 0.5);
+    }
+}
+/* .splash img{
+    width:100vw;
+    height: auto;
+} */
+.splashText{
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+
+
+
+
+
+/*
+banner
+___________________________________________________________________________________________
+*/
+.banner{
+    grid-area:banner;
+    background-color: var(--bgCallout);
+}
+.banner img{
+    display:block;
+    width:75%;
+    height:auto;
+    image-rendering: pixelated;
+    margin-left:auto;
+    margin-right:auto;
+}
+#space2{
+    display:block;
+    width:75%;
+    height:auto;
+    image-rendering: pixelated;
+    margin-left:auto;
+    margin-right:auto;
+}
+/* .bannerTxt{
+    width:fit-content;
+    height:fit-content;
+    background-color: blue;
+    display:flex;
+    top:10%;
+    margin-left:auto;
+    margin-right:auto;
+    
+} */
+
+
+
+
+
+
+
+/*
+main content
+|\  /|    /\    |   |\  |
+| \/ |   /__\   |   | \ |
+|    |  /    \  |   |  \|
+___________________________________________________________________________________________
+*/
+main{
+    grid-area: main;
+    background-color: var(--defBG);
+    padding:1rem;
+}
+.backToTop{
+    display:block;
+    background-color: white;
+    /* width:2rem;
+    font-size: 2rem; */
+    text-align: center;
+    justify-content: center;
+    color:black;
+    position:  fixed;
+    bottom:3rem;
+    right:2rem;
+    z-index: 99;
+}
+.backToTop a{
+    text-decoration: none;
+    font-size: 2rem;
+    width:1rem;
+    padding-right:.5rem;
+    padding-left:.5rem;
+    padding-top:.5rem;
+    background-color: rgb(169, 169, 169);
+    color:black;
+}
+.backToTop :hover{
+    background-color: #6f6f9f;
+}
+.dftImg img{
+    display:block;
+    width:75%;
+    height:auto;
+    margin-left:auto;
+    margin-right:auto;
+    
+
+}
+
+article{
+    text-align: left;
+    margin-left:auto;
+    margin-right:auto;
+    width:90%;
+}
+
+.wrapperMainContent article{
+    text-align: left;
+    margin-left:auto;
+    margin-right:auto;
+    width:80%;
+}
+.basicArticle{
+    background-color: var(--bgCallout3);
+    padding:1rem;
+    margin-top:5%;
+    border-radius:1rem;
+}
+.wrapperMainContentExpanded article{
+    text-align: left;
+    margin-left:auto;
+    margin-right:auto;
+    width:80%;  
+}
+.wrapperMainContentExpanded2 article{
+    text-align: left;
+    margin-left:auto;
+    margin-right:auto;
+    width:70%;  
+}
+.cardStore{
+    display:flex;
+    /* background-color: var(--bgCallout3); */
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width:90%;
+    padding:1rem;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.card{
+    width:45%;
+    min-width: 15rem;
+    max-width:30rem;
+    height:15rem;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    /* border:solid red; */
+    border:solid var(--bgCallout3);
+    margin-bottom:2rem;
+    background-color: var(--bgCallout);
+}
+.card p{
+    margin-bottom:2rem;
+}
+.card img{
+    width:8rem;
+    height:auto;
+}
+.readNow{
+    display:flex;
+    background-color: var(--callout);
+    box-shadow: .1rem .1rem var(--nav);
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding:1rem;
+    border-radius: 1rem;
+    margin-bottom:1rem;
+    margin-left:.5rem;
+    margin-right:.5rem;
+}
+.readNow:hover{
+    background-color:var(--nav);
+    box-shadow: none;
+    color:white;
+    /* border-radius: 2rem; */
+    transition:.25s;
+}
+.gridCard{
+    display:grid;
+    grid-template-rows: auto;
+    width:45%;
+    padding:.5rem;
+    margin-top:1rem;
+    margin-left:auto;
+    margin-right:auto;
+    /* height:20rem; */
+    background-color: var(--bgCallout);
+    border-radius: 1rem;
+}
+.gridCardFull{
+    display:grid;
+    grid-template-rows: auto;
+    width:90%;
+    padding:.5rem;
+    margin-top:1rem;
+    margin-left:auto;
+    margin-right:auto;
+    /* height:20rem; */
+    background-color: var(--bgCallout);
+    border-radius: 1rem;
+}
+
+@media screen and (max-width:950px){
+    .gridCard{
+        width:80%;
+    }
+    .gridCardFull{
+        width:80%;
+    }
+}
+.sectionTitle{
+    width:auto;
+    text-align: left;
+}
+.portfolio{
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: var(--bgCallout3);
+    padding:1rem;
+    border-radius: 1rem;
+    margin-top:1rem;
+    
+}
+.wrapperMainContent main{
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+ 
+.cardPort{
+    display:block;
+    width:30%;
+    min-width: 15rem;
+    max-width:30rem;
+    height:max-content;
+    margin-left:auto;
+    margin-right:auto;
+    /* text-align: center; */
+    /* border:solid red; */
+    /* border:solid var(--bgCallout3); */
+    /* margin-bottom:2rem; */
+    background-color: #9b9bbe;
+}
+.cardPort :hover{
+    background-color: yellowgreen;
+}
+
+
+.cardInfo{
+    width:60%;
+    min-width: 15rem;
+    max-width:30rem;
+    height:max-content;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: left;
+    padding:1rem;
+    /* border:solid red; */
+    border:solid var(--bgCallout);
+    margin-bottom:2rem;
+}
+.subTitle{
+    display:block;
+    width:100%;
+    text-align: center;
+
+}
+.portNav{
+    width:75%;
+    height:10%;
+    margin-left:auto;
+    margin-right:auto;
+    /* text-align: center; */
+    background-color: var(--bgCallout);
+    padding:1.5rem;
+    margin-bottom: 5%;
+
+}
+.portNav a{
+    background-color: var(--nav);
+    color:white;
+    padding:1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+    margin-left:1rem;
+    margin-top:.5rem;
+}
+.portNav a:hover{
+    background-color: var(--bgCallout2);
+}
+
+
+
+
+
+
+.cardStorePort{
+    display:block;
+    width:75%;
+    margin-left:auto;
+    margin-right:auto;
+}
+.cardStorePort p{
+    text-align: left;
+}
+.portCardRight{
+    display:block;
+    float:right;
+    background-color: var(--bgCallout3);
+    padding:1rem;
+    width:max-content;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+.portCardLeft{
+    display:flex;
+    float:left;
+    background-color: var(--bgCallout3);
+    padding:1rem;
+    width:max-content;
+    margin-right:1rem;
+    margin-left:1rem;
+}
+@media screen and (max-width:950px){
+    .portCardRight{
+        display:block;
+        background-color: var(--bgCallout3);
+        padding:.5rem;
+        width:max-content;
+        margin-left:.5rem;
+    }
+    .portNav a{
+        background-color: var(--nav);
+        display:flex;
+        flex-wrap: wrap;
+        color:white;
+        padding:1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    
+    .portCardLeft{
+        display:block;
+        background-color: var(--bgCallout3);
+        padding:.5rem;
+        width:80%;
+        margin-right:auto;
+        margin-left:auto;
+    }
+}
+
+
+.pageTitle{
+    text-align: center;
+}
+hr{
+    border:1px solid var(--bgCallout2);
+}
+
+
+
+
+
+/*
+PORFOLIO
+|---     _____
+|   |   |     |
+|   |   |     |
+|---    |     |
+|       ------
+___________________________________________________________________________________________
+*/
+.cardStoreWrapper{
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+    "title holder"
+    ;
+    background-color: var(--bgCallout2);
+    padding:1rem;
+
+}
+.cardHolder{
+    grid-area:holder;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+.cardStoreHeader{
+    grid-area: title;
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: var(--callout);
+    color:white;
+    height:98%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:950px) {
+    .cardStoreWrapper{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "title"
+            "holder"
+        ;
+        height:100vh;
+    }
+    .cardHolder{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        height:100vh;
+        
+    }
+}
+
+
+
+
+
+/*
+Aside
+___________________________________________________________________________________________
+*/
+aside{
+    grid-area: aside;
+    background-color: var(--defBG);
+    margin-top:1rem;
+    margin-bottom:1rem;
+    /* padding-left:.5rem;
+    padding-right:5rem; */
+}
+.wrapperMainContentExpanded aside{
+    text-align: left;
+    background-color: var(--bgCallout3);
+    border: solid .5rem var(--nav);
+    margin-left:auto;
+    margin-right:auto;
+    width:90%;  
+    border-radius: 1rem;
+}
+.wrapperMainContentExpanded2 aside{
+    text-align: left;
+    background-color: var(--bgCallout3);
+    border: solid .5rem var(--nav);
+    margin-left:auto;
+    margin-right:auto;
+    width:70%;  
+    border-radius: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+.asideContent{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:90%;
+    border-radius: 1rem;
+    padding:1rem;
+}
+.imgAside{
+    background-color: var(--defBG);
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius: 1rem;
+    
+}
+.imgAside img{
+    display:flex;
+    height:auto;
+    width:auto;
+    padding:1rem;
+    margin-top:1.5rem;
+    background-color: var(--bgCallout);
+    border-radius:1rem;
+}
+
+
+/*
+footer
+___________________________________________________________________________________________
+*/
+footer{
+    grid-area: footer;
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    padding:.5rem;
+    background-color: rgb(44, 44, 53);
+    /* background-color: var(--nav); */
+    color:white;
+    
+    /* grid-area: 3 / 1 / 4 / 4; */
+}
+
+/* 
+Dropdown Nav modified from W3C Schools
+_______________________________________
+*/
+li.dropdown {
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #797979;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: white;
+    background-color: #515151;
+    display: block;
+    text-align: center;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #797979;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+  /* __________Media Queries______________ */
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 950px) {
+    .topNav ul {
+        display: none;
+    }
+    .hamburgerBtn {
+      display: block;
+      float:right;
+        margin-top:.5rem;
+        image-rendering: pixelated;
+        height:3rem;
+        width:3rem;
+    }
+  }
+  
+/* @media screen and (max-width:950px){
+    .splashContent{
+        width:min-content;
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+    }
+} */
+
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  @media screen and (max-width: 950px) {
+    .topNav.responsive {position: relative;}
+    .topNav.responsive .hamburgerBtn{
+      position: absolute;
+      content: url(./img/navbar_close.png);
+      height:2rem;
+      width:2rem;
+      margin:.5rem;
+      right: 0;
+      top: 0;
+    }
+    .topNav.responsive ul{
+      float: left;
+      display: block;
+      padding-bottom:1rem;
+     
+    }
+    .topNav.responsive a{
+        display:flex;
+        justify-content: center;
+        float:left;
+
+    }
+  }
