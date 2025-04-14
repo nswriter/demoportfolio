@@ -907,6 +907,7 @@ li.dropdown {
       display: block;
       float:right;
         margin-top:.5rem;
+        content: url(./img/navbar.png);
         image-rendering: pixelated;
         height:3rem;
         width:3rem;
